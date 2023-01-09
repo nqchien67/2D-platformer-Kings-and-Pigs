@@ -9,7 +9,7 @@ namespace Player
         private int jumpCounter;
         private float jumpForce;
 
-        public Jumping(Player stateMachine) : base("Jumping", stateMachine) { }
+        public Jumping(King stateMachine) : base("Jumping", stateMachine) { }
 
         public override void Enter()
         {

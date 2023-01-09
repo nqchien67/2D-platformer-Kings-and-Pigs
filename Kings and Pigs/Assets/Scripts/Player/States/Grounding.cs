@@ -7,7 +7,7 @@ namespace Player
         private float lastGroundTime;
         private float LastPressedJumpTime;
 
-        public Grounding(string name, Player stateMachine) : base(name, stateMachine)
+        public Grounding(string name, King stateMachine) : base(name, stateMachine)
         {
             player = stateMachine;
         }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class Player : StateMachine, ICharacterController
+    public class King : StateMachine, ICharacterController
     {
         public Rigidbody2D Rigidbody { get; private set; }
         public Animator Animator { get; private set; }
@@ -60,12 +60,10 @@ namespace Player
 
         private void OnTriggerStay2D(Collider2D other)
         {
-            if (other.CompareTag("ExitDoor"))
+            if (other.CompareTag("ExitDoor") && Input.GetKey(KeyCode.UpArrow) && core.IsTouchingGround())
             {
-                if (Input.GetKey(KeyCode.UpArrow) && core.IsTouchingGround())
-                {
-                    //other.GetComponent<SceneLoader>().LoadNextScene();
-                }
+                Animator.SetTrigger("DoorIn");
+                other.GetComponent<ExitDoor>().LoadNextLevel();
             }
         }
 

@@ -4,7 +4,7 @@ namespace Player
 {
     public class Moving : Grounding
     {
-        public Moving(Player stateMachine) : base("Moving", stateMachine) { }
+        public Moving(King stateMachine) : base("Moving", stateMachine) { }
 
         public override void Enter()
         {

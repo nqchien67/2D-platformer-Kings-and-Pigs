@@ -5,7 +5,7 @@ namespace Player
 {
     public class Attack : BaseState
     {
-        private Player player;
+        private King player;
         private Core core;
         private PlayerData data;
 
@@ -13,7 +13,7 @@ namespace Player
         private bool isGrounded;
         private bool ableToFlip;
 
-        public Attack(Player player) : base("Attack", player)
+        public Attack(King player) : base("Attack", player)
         {
             this.player = player;
             core = player.core;
@@ -54,7 +54,6 @@ namespace Player
         public override void Exit()
         {
             base.Exit();
-            //player.AttackTransformObj.SetActive(false);
         }
 
         #region Animation triggers

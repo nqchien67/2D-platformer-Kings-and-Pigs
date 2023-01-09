@@ -8,7 +8,7 @@ namespace Player
 
         private void Start()
         {
-            attack = GetComponentInParent<Player>().attackStage;
+            attack = GetComponentInParent<King>().attackStage;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
