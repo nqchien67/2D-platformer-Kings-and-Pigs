@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Pig
+  - Box
+  - Bomb
+  - ExitDoor
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - Ground
+  - Enemy
+  - Dead
+  - Platform
+  - PlayerAttack
+  - Bomb
+  - Knockbackable
+  - Box
+  - BoxPieces
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 3308833685
+    locked: 0
+  - name: Windows
+    uniqueID: 3158033447
+    locked: 0
+  - name: Ground
+    uniqueID: 251836975
+    locked: 0
+  - name: Dead
+    uniqueID: 2157400955
+    locked: 0
+  - name: Box
+    uniqueID: 1249114797
+    locked: 0
+  - name: BoxPieces
+    uniqueID: 4146626755
+    locked: 0
+  - name: Bomb
+    uniqueID: 1478024991
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 981891471
+    locked: 0
+  - name: Decorators
+    uniqueID: 1946429643
+    locked: 0
