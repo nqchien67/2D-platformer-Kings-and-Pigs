@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyData
   m_EditorClassIdentifier: 
   fovRange: 5
-  fovWidth: 0.9
+  fovWidth: 0.5
   closeRange: 1
   findNewAreaRadius: 1
   ledgeCheckDistance: 0.1
