@@ -5,13 +5,13 @@ namespace Player
 {
     public class Movement : BaseState
     {
-        protected Player player;
+        protected King player;
         protected Core core;
         protected PlayerData data;
         protected Rigidbody2D rigidbody;
         protected float xInput;
 
-        public Movement(string name, Player player) : base(name, player)
+        public Movement(string name, King player) : base(name, player)
         {
             this.player = player;
             core = player.core;

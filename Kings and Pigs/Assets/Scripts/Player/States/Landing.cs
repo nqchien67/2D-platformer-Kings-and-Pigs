@@ -3,7 +3,7 @@ namespace Player
 {
     public class Landing : Grounding
     {
-        public Landing(Player stateMachine) : base("Landing", stateMachine)
+        public Landing(King stateMachine) : base("Landing", stateMachine)
         {
 
         }

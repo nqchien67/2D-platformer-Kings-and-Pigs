@@ -4,7 +4,7 @@ namespace Player
 {
     public class Idle : Grounding
     {
-        public Idle(Player stateMachine) : base("Idle", stateMachine) { }
+        public Idle(King stateMachine) : base("Idle", stateMachine) { }
 
         public override void Enter()
         {
