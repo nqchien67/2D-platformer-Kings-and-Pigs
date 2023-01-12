@@ -9,6 +9,7 @@ namespace Player
         protected Core core;
         protected PlayerData data;
         protected Rigidbody2D rigidbody;
+        protected Animator animator;
         protected float xInput;
 
         public Movement(string name, King player) : base(name, player)
@@ -17,6 +18,7 @@ namespace Player
             core = player.core;
             data = player.data;
             rigidbody = player.Rigidbody;
+            animator = player.Animator;
         }
 
         public override void Update()

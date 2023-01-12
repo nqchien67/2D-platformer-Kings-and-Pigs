@@ -15,7 +15,7 @@ namespace Player
         public override void Enter()
         {
             base.Enter();
-            player.Animator.SetBool("Grounded", true);
+            animator.SetBool("Grounded", true);
         }
 
         public override void Update()

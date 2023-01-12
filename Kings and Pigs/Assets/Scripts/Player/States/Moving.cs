@@ -9,6 +9,7 @@ namespace Player
         public override void Enter()
         {
             base.Enter();
+            animator.SetBool("Moving", true);
         }
 
         public override void Update()

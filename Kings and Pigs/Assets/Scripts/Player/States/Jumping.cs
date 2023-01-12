@@ -20,7 +20,7 @@ namespace Player
             core.SetVelocity(rigidbody.velocity.x, jumpForce);
 
             isGrounded = false;
-            player.Animator.SetBool("Grounded", false);
+            animator.SetBool("Grounded", false);
         }
 
         public override void Update()
@@ -43,7 +43,7 @@ namespace Player
 
             core.SetVelocityX(xInput * player.data.movingSpeed);
 
-            player.Animator.SetFloat("YVelocity", rigidbody.velocity.y);
+            animator.SetFloat("YVelocity", rigidbody.velocity.y);
 
             if (isGrounded && rigidbody.velocity.y < 0.01f)
                 stateMachine.ChangeState(player.idleStage);
