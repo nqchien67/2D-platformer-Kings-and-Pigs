@@ -4,9 +4,6 @@ namespace Player
 {
     public class Jumping : Movement
     {
-        private bool isGrounded;
-        private bool isHoldingJumpButton;
-        private int jumpCounter;
         private float jumpForce;
 
         public Jumping(King stateMachine) : base("Jumping", stateMachine) { }
@@ -15,44 +12,13 @@ namespace Player
         {
             base.Enter();
             jumpForce = player.data.jumpForce;
-            //jumpCounter = 0;
-
             core.SetVelocity(rigidbody.velocity.x, jumpForce);
-
-            isGrounded = false;
-            animator.SetBool("Grounded", false);
         }
 
         public override void Update()
         {
             base.Update();
-            //isHoldingJumpButton = Input.GetKey(KeyCode.A);
-
-            player.CheckIfShouldFlip(xInput);
-
-            //float velocityY = rigidbody.velocity.y;
-            //if (jumpCounter < player.data.jumpStep &&
-            //    jumpForce > Mathf.Epsilon &&
-            //    isHoldingJumpButton)
-            //{
-            //    velocityY = jumpForce;
-            //    jumpCounter++;
-            //    jumpForce -= 0.05f;
-            //}
-            //core.SetVelocity(xInput * player.data.movingSpeed, velocityY);
-
-            core.SetVelocityX(xInput * player.data.movingSpeed);
-
-            animator.SetFloat("YVelocity", rigidbody.velocity.y);
-
-            if (isGrounded && rigidbody.velocity.y < 0.01f)
-                stateMachine.ChangeState(player.idleStage);
-        }
-
-        public override void FixedUpdate()
-        {
-            base.FixedUpdate();
-            isGrounded = core.IsTouchingGround();
+            stateMachine.ChangeState(player.inAirState);
         }
     }
 }

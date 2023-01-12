@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 200
-  groundCheckRadius: 0.235
+  groundCheckRadius: 0.231
   groundLayer:
     serializedVersion: 2
     m_Bits: 576

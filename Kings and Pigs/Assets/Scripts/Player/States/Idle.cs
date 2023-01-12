@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class Idle : Grounding
+    public class Idle : Grounded
     {
         public Idle(King stateMachine) : base("Idle", stateMachine) { }
 

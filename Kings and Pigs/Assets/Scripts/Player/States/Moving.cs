@@ -2,7 +2,7 @@
 
 namespace Player
 {
-    public class Moving : Grounding
+    public class Moving : Grounded
     {
         public Moving(King stateMachine) : base("Moving", stateMachine) { }
 

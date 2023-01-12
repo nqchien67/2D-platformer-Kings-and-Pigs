@@ -17,10 +17,10 @@ MonoBehaviour:
   closeRange: 1
   findNewAreaRadius: 1
   ledgeCheckDistance: 0.1
-  meleeTime: 0.5
+  meleeTime: 0.6
   meleeRadius: 0.4
   damage: 1
-  knockbackStrength: 6
+  knockbackStrength: 5
   walkSpeed: 1.9
   sprintSpeed: 3.8
   minWaitTime: 0.5

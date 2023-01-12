@@ -2,12 +2,12 @@
 
 namespace Player
 {
-    public class Grounding : Movement
+    public class Grounded : Movement
     {
         private float lastGroundTime;
         private float LastPressedJumpTime;
 
-        public Grounding(string name, King stateMachine) : base(name, stateMachine)
+        public Grounded(string name, King stateMachine) : base(name, stateMachine)
         {
             player = stateMachine;
         }
@@ -37,6 +37,8 @@ namespace Player
                 LastPressedJumpTime = 0;
                 player.ChangeState(player.jumpingState);
             }
+            else if (!isGrounded)
+                player.ChangeState(player.inAirState);
         }
     }
 }

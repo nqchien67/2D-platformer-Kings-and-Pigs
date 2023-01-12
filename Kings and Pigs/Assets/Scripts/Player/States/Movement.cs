@@ -10,7 +10,9 @@ namespace Player
         protected PlayerData data;
         protected Rigidbody2D rigidbody;
         protected Animator animator;
+
         protected float xInput;
+        protected bool isGrounded;
 
         public Movement(string name, King player) : base(name, player)
         {
@@ -29,6 +31,14 @@ namespace Player
 
             if (Input.GetKeyDown(KeyCode.S) && !core.isKnockbacking)
                 stateMachine.ChangeState(player.attackStage);
+            else if (!isGrounded)
+                stateMachine.ChangeState(player.inAirState);
+        }
+
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            isGrounded = core.IsTouchingGround();
         }
     }
 }
