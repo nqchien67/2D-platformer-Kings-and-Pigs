@@ -41,7 +41,7 @@ namespace Player
                 if (isGrounded && player.Rigidbody.velocity.y < 0.01f)
                     stateMachine.ChangeState(player.idleStage);
                 else
-                    stateMachine.ChangeState(player.jumpingState);
+                    stateMachine.ChangeState(player.inAirState);
             }
         }
 
@@ -84,27 +84,5 @@ namespace Player
             }
         }
         #endregion
-
-        //public void AddToDetectdList(Collider2D collision)
-        //{
-        //    IDamageable damageable = collision.GetComponent<IDamageable>();
-        //    if (damageable != null)
-        //        detectedDamageables.Add(damageable);
-
-        //    IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
-        //    if (knockbackable != null)
-        //        detectedKnockbackables.Add(knockbackable);
-        //}
-
-        //public void RemoveFromDetectdList(Collider2D collision)
-        //{
-        //    IDamageable damageable = collision.GetComponent<IDamageable>();
-        //    if (damageable != null)
-        //        detectedDamageables.Remove(damageable);
-
-        //    IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
-        //    if (knockbackable != null)
-        //        detectedKnockbackables.Remove(knockbackable);
-        //}
     }
 }

@@ -15,8 +15,8 @@ namespace Enemy
 
         protected override void OnStart()
         {
-            pointA.Set(enemy.ActiveArea[0].x - data.fovRange, enemy.ActiveArea[0].y + 0.3f * data.fovRange);
-            pointB.Set(enemy.ActiveArea[1].x + data.fovRange, enemy.ActiveArea[1].y - 0.3f * data.fovRange);
+            pointA.Set(enemy.ActiveArea[0].x - data.fovRange, enemy.ActiveArea[0].y + 0.4f * data.fovRange);
+            pointB.Set(enemy.ActiveArea[1].x + data.fovRange, enemy.ActiveArea[1].y - 0.4f * data.fovRange);
         }
 
         protected override void OnStop()

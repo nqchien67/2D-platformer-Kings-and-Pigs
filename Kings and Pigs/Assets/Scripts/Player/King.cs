@@ -17,6 +17,7 @@ namespace Player
         public Moving runningStage;
         public Jumping jumpingState;
         public Attack attackStage;
+        public InAirState inAirState;
 
         private void Awake()
         {
@@ -30,6 +31,7 @@ namespace Player
             runningStage = new Moving(this);
             jumpingState = new Jumping(this);
             attackStage = new Attack(this);
+            inAirState = new InAirState(this);
 
             core.isFacingRight = true;
         }

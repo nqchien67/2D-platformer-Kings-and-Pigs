@@ -88,7 +88,7 @@ public class Core : MonoBehaviour, IKnockbackable, IDamageable
         SetVelocity(angle.x * strength, angle.y * strength);
         canSetVelocity = false;
         isKnockbacking = true;
-        animator.SetBool("Grounded", false);
+        animator.SetBool("Knockback", true);
     }
 
     private void CheckKnockback()
@@ -102,7 +102,7 @@ public class Core : MonoBehaviour, IKnockbackable, IDamageable
             }
             isKnockbacking = false;
             canSetVelocity = true;
-            animator.SetBool("Grounded", true);
+            animator.SetBool("Knockback", false);
         }
     }
 
