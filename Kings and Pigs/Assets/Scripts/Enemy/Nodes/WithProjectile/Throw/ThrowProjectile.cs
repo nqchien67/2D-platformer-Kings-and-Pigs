@@ -13,7 +13,7 @@ namespace Enemy
         {
             blackboard.hasProjectile = false;
             core.SetVelocityX(0f);
-
+            Debug.Log(blackboard.projectileType);
             switch (blackboard.projectileType)
             {
                 case "Bomb":

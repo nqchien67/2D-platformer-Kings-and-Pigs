@@ -9,7 +9,7 @@ namespace Player
         public override void Enter()
         {
             base.Enter();
-            player.Animator.SetBool("Moving", false);
+            animator.SetBool("Moving", false);
         }
 
         public override void Update()
@@ -19,16 +19,7 @@ namespace Player
             xInput = Input.GetAxisRaw("Horizontal");
 
             if (Mathf.Abs(xInput) > Mathf.Epsilon)
-            {
-                player.Animator.SetBool("Moving", true);
                 stateMachine.ChangeState(player.runningStage);
-            }
-        }
-
-        public override void FixedUpdate()
-        {
-            base.FixedUpdate();
-
         }
     }
 }

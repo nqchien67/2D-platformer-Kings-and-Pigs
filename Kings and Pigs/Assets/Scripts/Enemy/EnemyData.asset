@@ -20,7 +20,7 @@ MonoBehaviour:
   meleeTime: 0.5
   meleeRadius: 0.4
   damage: 1
-  knockbackStrength: 5
+  knockbackStrength: 6
   walkSpeed: 1.9
   sprintSpeed: 3.8
   minWaitTime: 0.5
