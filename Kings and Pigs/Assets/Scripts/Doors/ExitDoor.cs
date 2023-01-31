@@ -2,34 +2,54 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ExitDoor : MonoBehaviour
+namespace Doors
 {
-    private GameObject king;
-
-    private void Start()
+    public class ExitDoor : Door
     {
-        king = GameObject.Find("King");
-    }
+        protected override void OnStart()
+        {
+            if (data.previousLevel > currentLevel)
+                king.transform.position = transform.position;
 
-    public void LoadNextLevel()
-    {
-        int currentSceneIndex = SceneManager.GetSceneAt(1).buildIndex;
-        StartCoroutine(LoadScene(currentSceneIndex));
-    }
+            kingAnimator.SetTrigger("DoorOut");
 
-    private IEnumerator LoadScene(int currentSceneIndex)
-    {
-        AsyncOperation unloadScene = SceneManager.UnloadSceneAsync(currentSceneIndex);
-        AsyncOperation loadScene = SceneManager.LoadSceneAsync(currentSceneIndex + 1, LoadSceneMode.Additive);
+            animator.SetTrigger("Open");
 
-        Animator animator = king.GetComponent<Animator>();
-        float animLength = animator.GetCurrentAnimatorStateInfo(0).length;
-        yield return new WaitForSeconds(animLength);
+            StartCoroutine(CLoseDoor(kingAnimator));
+        }
 
-        while (!unloadScene.isDone && !loadScene.isDone)
+        protected override void LoadLevel()
+        {
+            int currentSceneIndex = SceneManager.GetSceneAt(1).buildIndex;
+            StartCoroutine(LoadNextScene(currentSceneIndex));
+        }
+
+        private IEnumerator CLoseDoor(Animator playerAnimator)
+        {
+            float animlenth = playerAnimator.GetCurrentAnimatorClipInfo(0).Length;
+            yield return new WaitForSeconds(animlenth);
+
+            animator.SetTrigger("Close");
             yield return null;
+        }
 
-        //Scene loadedScene = SceneManager.GetSceneByBuildIndex(currentSceneIndex + 1);
-        //SceneManager.SetActiveScene(loadedScene);
+        private IEnumerator LoadNextScene(int currentSceneIndex)
+        {
+            AsyncOperation loadScene = SceneManager.LoadSceneAsync(currentSceneIndex + 1, LoadSceneMode.Additive);
+            loadScene.allowSceneActivation = false;
+
+            float animLength = GetCurrentAnimationLength(kingAnimator);
+            yield return new WaitForSeconds(animLength - 0.5f);
+
+            SceneManager.UnloadSceneAsync(currentSceneIndex, UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
+
+            loadScene.allowSceneActivation = true;
+            yield return null;
+        }
+
+        private float GetCurrentAnimationLength(Animator animator)
+        {
+            return animator.GetCurrentAnimatorClipInfo(0).Length;
+        }
     }
 }

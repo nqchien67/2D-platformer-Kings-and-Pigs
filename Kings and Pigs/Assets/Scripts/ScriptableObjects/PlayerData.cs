@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 namespace Player
 {
-    [CreateAssetMenu(menuName = "Player Data")]
+    [CreateAssetMenu(menuName = "Data/Player Data")]
     public class PlayerData : ScriptableObject
     {
         public float movingSpeed;

@@ -58,15 +58,6 @@ namespace Player
 
         public void Die() { this.enabled = false; }
 
-        private void OnTriggerStay2D(Collider2D other)
-        {
-            if (other.CompareTag("ExitDoor") && Input.GetKey(KeyCode.UpArrow) && core.IsTouchingGround())
-            {
-                Animator.SetTrigger("DoorIn");
-                other.GetComponent<ExitDoor>().LoadNextLevel();
-            }
-        }
-
         #region Animation triggers
         //public void AnimationActionTrigger() { attackStage.DoDamage(); }
 
