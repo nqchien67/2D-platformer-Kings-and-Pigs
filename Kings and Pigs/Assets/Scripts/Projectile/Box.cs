@@ -121,6 +121,8 @@ public class Box : MonoBehaviour, IKnockbackable, IProjectile
 
         this.thrower = thrower;
         ExcludeCollision();
+
+        transform.GetComponent<SpriteRenderer>().sortingLayerName = "Projectile";
     }
 
     private void ExcludeCollision()

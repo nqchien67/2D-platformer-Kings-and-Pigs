@@ -18,7 +18,7 @@ namespace Player
             core.SetVelocityX(0f);
             xInput = Input.GetAxisRaw("Horizontal");
 
-            if (Mathf.Abs(xInput) > Mathf.Epsilon)
+            if (Mathf.Abs(xInput) > 0)
                 stateMachine.ChangeState(player.runningStage);
         }
     }

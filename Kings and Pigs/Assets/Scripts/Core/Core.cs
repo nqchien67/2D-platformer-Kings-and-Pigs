@@ -54,6 +54,13 @@ public class Core : MonoBehaviour, IKnockbackable, IDamageable
         SetFinalVelocity();
     }
 
+    public void SetVelocityY(float y)
+    {
+        vector2 = rb.velocity;
+        vector2.y = y;
+        SetFinalVelocity();
+    }
+
     public void SetVelocity(float x, float y)
     {
         vector2.Set(x, y);

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   movingSpeed: 4
-  jumpForce: 9
+  jumpForce: 11
   jumpStep: 1
   attackDamage: 1
   knockbackStrength: 6
   coyoteTime: 0.2
-  jumpInputBufferTime: 0.5
+  jumpInputBufferTime: 0.2

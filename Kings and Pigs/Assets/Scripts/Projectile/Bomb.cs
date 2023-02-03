@@ -52,6 +52,7 @@ public class Bomb : MonoBehaviour, IProjectile
         isBurning = true;
         ExcludeCollision();
 
+        transform.GetComponent<SpriteRenderer>().sortingLayerName = "Projectile";
         animator.SetTrigger("Active");
     }
 

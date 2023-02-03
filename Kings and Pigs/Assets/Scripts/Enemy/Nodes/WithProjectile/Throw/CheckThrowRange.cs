@@ -24,10 +24,9 @@ namespace Enemy
             if (playerInRange)
             {
                 enemy.FacingToPosition(playerInRange.transform.position);
-                core.SetVelocityX(0f);
-                animator.SetTrigger("ThrowBomb");
                 return State.SUCCESS;
             }
+
             return State.FAILURE;
         }
     }

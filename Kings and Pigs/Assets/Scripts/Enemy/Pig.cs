@@ -20,7 +20,7 @@ namespace Enemy
 
         private Transform ledgeCheck;
 
-        private Wait wait;
+        private EnemyWait wait;
         private MoveToProjectile moveToProjectile;
         private PickProjectile pickProjectile;
 
@@ -40,7 +40,7 @@ namespace Enemy
 
         private void CreateNodeInstances()
         {
-            wait = new Wait();
+            wait = new EnemyWait(this);
             pickProjectile = new PickProjectile(this);
             moveToProjectile = new MoveToProjectile(this);
         }
@@ -58,7 +58,6 @@ namespace Enemy
                         new Sequencer(new List<Node>()
                         {
                             new CheckThrowRange(this),
-                            new Wait(0.4f),
                             new ThrowProjectile(this),
                             wait
                         }),
