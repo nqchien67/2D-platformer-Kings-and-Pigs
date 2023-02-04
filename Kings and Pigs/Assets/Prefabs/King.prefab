@@ -89,12 +89,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.0633202, y: -0.21459746}
+    - - {x: 1.0123515, y: -0.16362834}
       - {x: 1.7839978, y: 0.1325016}
       - {x: 1.9240898, y: 0.6650162}
-      - {x: 1.5738584, y: 1.4030704}
-      - {x: 1.1780509, y: 1.3432465}
-      - {x: 0.53694475, y: -0.15168005}
+      - {x: 1.5285527, y: 1.3690901}
+      - {x: 0.640046, y: 1.1676874}
+      - {x: 0.117866874, y: 0.09183782}
   m_UseDelaunayMesh: 0
 --- !u!1 &5739590107761429057
 GameObject:
@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 5739590108407438429}
   - component: {fileID: 5739590108407438419}
   - component: {fileID: 5739590108407438418}
+  - component: {fileID: 7522932455720266258}
   m_Layer: 3
   m_Name: King
   m_TagString: Player
@@ -234,7 +235,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 6200000, guid: d6a243f03f892b94d91641949493e2dd, type: 2}
+  m_Material: {fileID: 6200000, guid: 7699cb91d337aeb4a87f4e511f7bfe8f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -328,8 +329,8 @@ PolygonCollider2D:
       - {x: -0.24782276, y: 0.2845502}
       - {x: -0.24880314, y: -0.047402382}
       - {x: -0.24925375, y: -0.36993384}
-      - {x: -0.1472444, y: -0.47028205}
-      - {x: 0.14565372, y: -0.47002646}
+      - {x: -0.14, y: -0.47028205}
+      - {x: 0.14, y: -0.47002646}
   m_UseDelaunayMesh: 0
 --- !u!61 &5739590108407438418
 BoxCollider2D:
@@ -376,6 +377,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4375, y: 1.8125}
   m_EdgeRadius: 0
+--- !u!114 &7522932455720266258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5739590108407438427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac7cb423ffd9da43b1557f3e3946694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5739590108945297760
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e79dceaa61c1e40b146181a1fcfaa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 200
+  maxHP: 7
   groundCheckRadius: 0.23
   groundLayer:
     serializedVersion: 2

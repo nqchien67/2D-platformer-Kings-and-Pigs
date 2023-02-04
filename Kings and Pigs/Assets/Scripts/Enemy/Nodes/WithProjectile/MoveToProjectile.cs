@@ -6,6 +6,7 @@ namespace Enemy
     public class MoveToProjectile : EnemyNode
     {
         private Vector2 projectilePosition;
+        private float moveSpeed;
 
         public MoveToProjectile(Pig enemy) : base(enemy) { }
 
@@ -13,8 +14,7 @@ namespace Enemy
         {
             projectilePosition = blackboard.projectileObj.transform.position;
 
-            float moveSpeed = blackboard.target ? data.sprintSpeed : data.walkSpeed;
-            enemy.MoveToPosition(projectilePosition, moveSpeed);
+            moveSpeed = blackboard.target ? data.sprintSpeed : data.walkSpeed;
             animator.SetBool("Moving", true);
         }
 
@@ -29,6 +29,7 @@ namespace Enemy
 
             if (enemy.IsDetectedLedge()) return State.FAILURE;
 
+            enemy.MoveToPosition(projectilePosition, moveSpeed);
             return State.RUNNING;
         }
     }

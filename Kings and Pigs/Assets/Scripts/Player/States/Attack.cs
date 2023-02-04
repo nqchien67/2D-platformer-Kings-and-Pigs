@@ -8,22 +8,25 @@ namespace Player
         private King player;
         private Core core;
         private PlayerData data;
+        private Animator animator;
 
         public bool isAttackDone;
         private bool isGrounded;
         private bool ableToFlip;
+        private float lastPressedJumpTime = 0f;
 
         public Attack(King player) : base("Attack", player)
         {
             this.player = player;
             core = player.core;
             data = player.data;
+            animator = player.Animator;
         }
 
         public override void Enter()
         {
             base.Enter();
-            player.Animator.SetTrigger("Attack");
+            animator.SetTrigger("Attack");
             isAttackDone = false;
         }
 
@@ -31,15 +34,26 @@ namespace Player
         {
             base.Update();
 
+            JumpBufferHandle();
+
             if (ableToFlip)
+            {
                 player.CheckIfShouldFlip(player.xInput);
+                if (lastPressedJumpTime > 0)
+                {
+                    lastPressedJumpTime = 0f;
+                    stateMachine.ChangeState(player.jumpingState);
+                }
+            }
 
             core.SetVelocityX(player.xInput * player.data.movingSpeed);
 
             if (isAttackDone || core.isKnockbacking)
             {
                 if (isGrounded && player.Rigidbody.velocity.y < 0.01f)
+                {
                     stateMachine.ChangeState(player.idleStage);
+                }
                 else
                     stateMachine.ChangeState(player.inAirState);
             }
@@ -51,9 +65,13 @@ namespace Player
             isGrounded = core.IsTouchingGround();
         }
 
-        public override void Exit()
+        private void JumpBufferHandle()
         {
-            base.Exit();
+            if (Input.GetKeyDown(KeyCode.S))
+                lastPressedJumpTime = data.jumpInputBufferTime;
+
+            if (lastPressedJumpTime > 0)
+                lastPressedJumpTime -= Time.deltaTime;
         }
 
         #region Animation triggers

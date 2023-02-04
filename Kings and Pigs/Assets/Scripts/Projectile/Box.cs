@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Box : MonoBehaviour, IKnockbackable, IProjectile
 {
@@ -121,6 +120,8 @@ public class Box : MonoBehaviour, IKnockbackable, IProjectile
 
         this.thrower = thrower;
         ExcludeCollision();
+
+        transform.GetComponent<SpriteRenderer>().sortingLayerName = "Projectile";
     }
 
     private void ExcludeCollision()

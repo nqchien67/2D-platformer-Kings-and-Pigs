@@ -4,7 +4,7 @@ namespace BehaviourTree
 {
     public class Wait : ActionNode
     {
-        public float duration;
+        private float duration;
         private float startTime;
 
         public Wait(float duration = 0.5f)

@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-public interface ICharacterController
+﻿public interface ICharacterController
 {
     void Die();
 }

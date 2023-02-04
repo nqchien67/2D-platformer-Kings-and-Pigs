@@ -477,7 +477,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 6200000, guid: d6a243f03f892b94d91641949493e2dd, type: 2}
+  m_Material: {fileID: 6200000, guid: 7699cb91d337aeb4a87f4e511f7bfe8f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -605,8 +605,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.1797364, y: -0.3514676}
-      - {x: -0.079450935, y: -0.43453932}
-      - {x: 0.2, y: -0.4345393}
+      - {x: -0.084, y: -0.43}
+      - {x: 0.204, y: -0.43}
       - {x: 0.29788995, y: -0.35228753}
       - {x: 0.2978899, y: 0.08705568}
       - {x: -0.17973638, y: 0.085455894}
