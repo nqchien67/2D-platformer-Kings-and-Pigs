@@ -1,6 +1,4 @@
 ﻿using BehaviourTree;
-using System.Collections;
-using UnityEngine;
 
 namespace Enemy
 {
