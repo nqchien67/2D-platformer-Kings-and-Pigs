@@ -19,7 +19,7 @@ namespace Player
             player.CheckIfShouldFlip(xInput);
 
             if (Mathf.Abs(xInput) < Mathf.Epsilon)
-                stateMachine.ChangeState(player.idleStage);
+                stateMachine.ChangeState(player.idleState);
         }
 
         public override void FixedUpdate()

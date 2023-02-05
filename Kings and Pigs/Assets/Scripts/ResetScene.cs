@@ -5,15 +5,6 @@ using UnityEngine.SceneManagement;
 public class ResetScene : MonoBehaviour
 {
     public string sceneName = "";
-    private List<Scene> activeScenes = new List<Scene>();
-
-    private void Start()
-    {
-        for (int i = 0; i < SceneManager.sceneCount; ++i)
-        {
-            activeScenes.Add(SceneManager.GetSceneAt(i));
-        }
-    }
 
     private void Update()
     {
@@ -21,10 +12,21 @@ public class ResetScene : MonoBehaviour
         {
             if (sceneName != "")
                 SceneManager.LoadScene(sceneName);
+            else
+            {
+                Scene currentScene = SceneManager.GetSceneAt(1);
 
-            SceneManager.LoadScene(activeScenes[0].name);
-            for (int i = 1; i < activeScenes.Count; ++i)
-                SceneManager.LoadScene(activeScenes[i].name, LoadSceneMode.Additive);
+                SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+                SceneManager.LoadScene(currentScene.name, LoadSceneMode.Additive);
+            }
         }
+        else if (Input.GetKeyDown(KeyCode.Q))
+            LoadLevel1();
+    }
+
+    private void LoadLevel1()
+    {
+        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadSceneAsync("Scene1", LoadSceneMode.Additive);
     }
 }

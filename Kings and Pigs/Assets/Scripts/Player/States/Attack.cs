@@ -52,7 +52,7 @@ namespace Player
             {
                 if (isGrounded && player.Rigidbody.velocity.y < 0.01f)
                 {
-                    stateMachine.ChangeState(player.idleStage);
+                    stateMachine.ChangeState(player.idleState);
                 }
                 else
                     stateMachine.ChangeState(player.inAirState);
