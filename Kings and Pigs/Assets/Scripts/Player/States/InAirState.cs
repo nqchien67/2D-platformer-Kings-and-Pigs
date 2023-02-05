@@ -60,7 +60,7 @@ namespace Player
                 stateMachine.ChangeState(player.jumpingState);
             }
             else
-                stateMachine.ChangeState(player.idleStage);
+                stateMachine.ChangeState(player.idleState);
         }
 
         private bool IsJumpCut() => Input.GetKeyUp(KeyCode.S) && rigidbody.velocity.y > 0f;

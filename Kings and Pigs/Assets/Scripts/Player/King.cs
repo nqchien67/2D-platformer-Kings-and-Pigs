@@ -13,10 +13,10 @@ namespace Player
         [HideInInspector] public float xInput;
         public PlayerData data;
 
-        public Idle idleStage;
-        public Moving runningStage;
+        public Idle idleState;
+        public Moving movingState;
         public Jumping jumpingState;
-        public Attack attackStage;
+        public Attack attackState;
         public InAirState inAirState;
 
         private void Awake()
@@ -27,10 +27,10 @@ namespace Player
             Rigidbody = GetComponent<Rigidbody2D>();
             Animator = GetComponent<Animator>();
 
-            idleStage = new Idle(this);
-            runningStage = new Moving(this);
+            idleState = new Idle(this);
+            movingState = new Moving(this);
             jumpingState = new Jumping(this);
-            attackStage = new Attack(this);
+            attackState = new Attack(this);
             inAirState = new InAirState(this);
 
             core.isFacingRight = true;
@@ -44,7 +44,7 @@ namespace Player
 
         protected override BaseState GetInitialState()
         {
-            return idleStage;
+            return idleState;
         }
 
         public void CheckIfShouldFlip(float horizontalInput)
@@ -59,13 +59,11 @@ namespace Player
         public void Die() { this.enabled = false; }
 
         #region Animation triggers
-        //public void AnimationActionTrigger() { attackStage.DoDamage(); }
+        public void AnimationFinishTrigger() { attackState.SetAttackDone(); }
 
-        public void AnimationFinishTrigger() { attackStage.SetAttackDone(); }
+        public void AnimationTurnOffFlipTrigger() { attackState.TurnOffFlip(); }
 
-        public void AnimationTurnOffFlipTrigger() { attackStage.TurnOffFlip(); }
-
-        public void AnimationTurnOnFlipTrigger() { attackStage.TurnOnFlip(); }
+        public void AnimationTurnOnFlipTrigger() { attackState.TurnOnFlip(); }
         #endregion
     }
 }

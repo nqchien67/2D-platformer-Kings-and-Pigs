@@ -31,7 +31,7 @@ namespace Player
             isGrounded = core.IsTouchingGround();
 
             if (Input.GetKeyDown(KeyCode.D) && !core.isKnockbacking)
-                stateMachine.ChangeState(player.attackStage);
+                stateMachine.ChangeState(player.attackState);
         }
 
         public override void FixedUpdate()

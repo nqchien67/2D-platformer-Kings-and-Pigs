@@ -19,7 +19,7 @@ namespace Player
             xInput = Input.GetAxisRaw("Horizontal");
 
             if (Mathf.Abs(xInput) > 0)
-                stateMachine.ChangeState(player.runningStage);
+                stateMachine.ChangeState(player.movingState);
         }
     }
 }
